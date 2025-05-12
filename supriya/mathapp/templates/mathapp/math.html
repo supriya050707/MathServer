@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Filament Power Calculator</title>
+    <style>
+        body {
+            font-size: 20px;
+            background-color:rgb(26, 83, 29);
+            color:whitesmoke;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .formelt {
+            margin: 10px 0;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: rgb(179, 126, 194);
+            color: #111;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b066ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filament Power Calculator</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="formelt">
+            Intensity (I): <input type="text" name="intensity" value="{{i}}"> (in amperes)<br/>
+        </div>
+        <div class="formelt">
+            Resistance (R): <input type="text" name="resistance" value="{{r}}"> (in ohms)<br/>
+        </div>
+        <div class="formelt">
+            <input type="submit" value="Calculate Power"><br/>
+        </div>
+        <div class="formelt">
+            Power (P): <input type="text" name="power" value="{{p}}"> watts<br/>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
